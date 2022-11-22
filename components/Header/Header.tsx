@@ -12,13 +12,13 @@ const Header = () => (
       <div className="font-semibold flex flex-row gap-4">
         <Link
           href="/signin"
-          className="py-1 px-4 rounded-full hover:bg-cyan-100 hover:text-cyan-600 transition"
+          className="py-1 px-4 rounded-full hover:bg-gradient-to-br from-emerald-400/20 to-blue-600/20 transition"
         >
           Sign in
         </Link>
         <Link
           href="/signup"
-          className="bg-cyan-600 py-1 px-4 rounded-full text-white transition hover:bg-cyan-700"
+          className="bg-gradient-to-br from-emerald-400 to-blue-600 py-1 px-4 rounded-full text-white transition hover:shadow-md"
         >
           Get started
         </Link>
