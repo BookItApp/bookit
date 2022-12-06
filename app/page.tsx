@@ -5,7 +5,10 @@ import HotelImage from "../public/images/hotel.jpeg";
 import ApartmentImage from "../public/images/apartment.jpeg";
 import ResortImage from "../public/images/resort.jpeg";
 import VillaImage from "../public/images/villa.jpeg";
+
 import Destinations from "../components/Destinations";
+import ChristmasImage from "../public/images/christmas.jpeg";
+import NewYorkImage from "../public/images/nyc.jpeg";
 
 const Banner = () => (
   <div className="relative w-full h-96">
@@ -33,7 +36,7 @@ const Banner = () => (
   </div>
 );
 
-const Accomodation = ({
+const LongCard = ({
   href,
   name,
   image,
@@ -47,10 +50,10 @@ const Accomodation = ({
       <h3 className="text-white text-4xl">{name}</h3>
     </div>
     <Image
-      alt="Hotels"
+      alt={name}
       src={image}
       placeholder="blur"
-      className="block rounded-md brightness-75 group-hover:brightness-100 transition"
+      className="block rounded-md brightness-75 group-hover:brightness-100 transition object-cover h-full"
     />
   </Link>
 );
@@ -68,10 +71,29 @@ const Accomodations = () => (
       </Link>
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-      <Accomodation href="/" name="Hotels" image={HotelImage} />
-      <Accomodation href="/" name="Apartments" image={ApartmentImage} />
-      <Accomodation href="/" name="Resorts" image={ResortImage} />
-      <Accomodation href="/" name="Villas" image={VillaImage} />
+      <LongCard href="/" name="Hotels" image={HotelImage} />
+      <LongCard href="/" name="Apartments" image={ApartmentImage} />
+      <LongCard href="/" name="Resorts" image={ResortImage} />
+      <LongCard href="/" name="Villas" image={VillaImage} />
+    </div>
+  </div>
+);
+
+const Articles = () => (
+  <div className="w-full flex flex-col gap-4">
+    <div className="flex flex-row items-center justify-between gap-8">
+      <h2 className="text-xl font-bold">Get inspiration for your next adventure!</h2>
+      <Link
+        href="/accomodations"
+        className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-blue-600 flex items-center flex-row"
+      >
+        <p className="font-bold">Explore all ideas</p>
+        <span className="font-icons text-xl ml-1 -mr-1">arrow_forward</span>
+      </Link>
+    </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <LongCard href="/" name="The coziest holiday stays in the USA" image={ChristmasImage} />
+      <LongCard href="/" name="48 hours in New York" image={NewYorkImage} />
     </div>
   </div>
 );
@@ -80,9 +102,10 @@ export default function Home() {
   return (
     <main className="h-full w-full flex flex-col items-center container gap-8">
       <Banner />
-      <Destinations/>
-      <div className="p-4 sm:p-0 flex flex-col gap-4 items-center">
+      <div className="p-4 sm:p-0 sm:pb-8 flex flex-col gap-8 items-center">
+        <Destinations/>
         <Accomodations />
+        <Articles />
       </div>
     </main>
   );
