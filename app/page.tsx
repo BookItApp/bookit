@@ -7,8 +7,15 @@ import ResortImage from "../public/images/resort.jpeg";
 import VillaImage from "../public/images/villa.jpeg";
 
 const Banner = () => (
-  <div className="relative w-full">
-    <div className="absolute w-full h-full flex flex-col items-center gap-8 justify-center bg-black/25 2xl:rounded-lg z-10">
+  <div className="relative w-full h-96">
+    <Image
+      alt="Banner"
+      src={BannerImage}
+      placeholder="blur"
+      fill
+      className="sm:rounded-lg brightness-75 z-0 object-cover"
+    />
+    <div className="absolute w-full h-full flex flex-col items-center gap-4 justify-center bg-black/25 sm:rounded-lg z-20 p-4">
       <p className="text-white text-5xl font-bold text-center">
         Reserve the destinations of
         <br />
@@ -22,12 +29,6 @@ const Banner = () => (
         <span className="font-icons text-2xl ml-1 -mr-1">arrow_forward</span>
       </Link>
     </div>
-    <Image
-      alt="Banner"
-      src={BannerImage}
-      placeholder="blur"
-      className="block 2xl:rounded-lg brightness-75"
-    />
   </div>
 );
 
@@ -78,8 +79,8 @@ export default function Home() {
   return (
     <main className="h-full w-full flex flex-col items-center container gap-8">
       <Banner />
-      <div className="p-4 flex flex-col gap-4 items-center">
-      <Accomodations />
+      <div className="p-4 sm:p-0 flex flex-col gap-4 items-center">
+        <Accomodations />
       </div>
     </main>
   );
