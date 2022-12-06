@@ -5,6 +5,7 @@ import HotelImage from "../public/images/hotel.jpeg";
 import ApartmentImage from "../public/images/apartment.jpeg";
 import ResortImage from "../public/images/resort.jpeg";
 import VillaImage from "../public/images/villa.jpeg";
+import Destinations from "../components/Destinations";
 
 const Banner = () => (
   <div className="relative w-full h-96">
@@ -79,6 +80,7 @@ export default function Home() {
   return (
     <main className="h-full w-full flex flex-col items-center container gap-8">
       <Banner />
+      <Destinations/>
       <div className="p-4 sm:p-0 flex flex-col gap-4 items-center">
         <Accomodations />
       </div>
