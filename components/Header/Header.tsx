@@ -3,7 +3,7 @@ import Link from "next/link";
 const Header = () => (
   <header className="p-4 w-full">
     <div className="container mx-auto flex flex-row justify-between items-center">
-      <Link href="/" className="font-bold text-3xl select-none">
+      <Link href="/" className="font-black text-3xl select-none">
         Book
         <span className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-blue-600">
           It.
@@ -20,7 +20,7 @@ const Header = () => (
           href="/signup"
           className="bg-gradient-to-br from-emerald-400 to-blue-600 py-1 px-4 rounded-full text-white transition hover:shadow-md"
         >
-          Get started
+          Sign Up
         </Link>
       </div>
     </div>

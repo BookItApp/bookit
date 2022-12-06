@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("../public/fonts/Montserrat.ttf");
+}
+
+@font-face {
+  font-family: "Material Icons";
+  src: url("../public/fonts/MaterialSymbolsOutlined[FILL\,GRAD\,opsz\,wght].woff2");
+}
+
+.font-icons {
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
 @layer base {
   [data-nextjs-scroll-focus-boundary] {
     display: contents;
