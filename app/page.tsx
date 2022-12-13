@@ -24,7 +24,7 @@ const Banner = () => (
         your dreams in no time.
       </p>
       <Link
-        href="/"
+        href="/search"
         className="bg-white rounded-full px-6 py-2 flex flex-row items-center gap-1"
       >
         <p className="font-bold">Get started</p>
