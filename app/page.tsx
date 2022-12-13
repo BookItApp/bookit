@@ -5,6 +5,8 @@ import HotelImage from "../public/images/hotel.jpeg";
 import ApartmentImage from "../public/images/apartment.jpeg";
 import ResortImage from "../public/images/resort.jpeg";
 import VillaImage from "../public/images/villa.jpeg";
+
+import Destinations from "../components/Destinations";
 import ChristmasImage from "../public/images/christmas.jpeg";
 import NewYorkImage from "../public/images/nyc.jpeg";
 
@@ -101,6 +103,7 @@ export default function Home() {
     <main className="h-full w-full flex flex-col items-center container gap-8">
       <Banner />
       <div className="p-4 sm:p-0 sm:pb-8 flex flex-col gap-8 items-center">
+        <Destinations/>
         <Accomodations />
         <Articles />
       </div>
