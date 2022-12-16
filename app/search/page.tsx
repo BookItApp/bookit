@@ -2,24 +2,25 @@
 
 import NYC from "../../public/images/nyc.jpeg";
 import Image, { StaticImageData } from "next/image";
+import { prisma } from "../../lib/db";
 
 const Card = ({
   src,
   name,
   description,
-  stars,
-  category,
+  rating,
+  type,
   price,
 }: {
   src: StaticImageData;
   name: string;
   description: string;
-  stars: number;
-  category: "Hotel" | "Apartment" | "Resort" | "Villa";
+  rating: number;
+  type: string;
   price: string;
 }) => {
   let starsElements = [];
-  for (let i = 0; i < stars; i++) {
+  for (let i = 0; i < rating; i++) {
     starsElements.push(
       <span className="font-icons text-2xl text-amber-500">star</span>
     );
@@ -41,16 +42,16 @@ const Card = ({
               <div className="flex flex-row -mx-1 -mt-1">{starsElements}</div>
               <p
                 className={`text-xs ${
-                  category === "Hotel"
+                  type === "Hotel"
                     ? "bg-green-400 text-green-700"
-                    : category === "Apartment"
+                    : type === "Apartment"
                     ? "bg-violet-400 text-violet-700"
-                    : category === "Resort"
+                    : type === "Resort"
                     ? "bg-orange-400 text-orange-700"
                     : "bg-sky-400 text-sky-700"
                 } font-semibold px-2 py-0.5 rounded-full`}
               >
-                {category}
+                {type}
               </p>
             </div>
             <p className="text-lg text-green-500">{price}</p>
@@ -69,7 +70,17 @@ const Card = ({
   );
 };
 
-const Search = () => {
+const getData = async () => {
+  try {
+    const accomodations = await prisma.accomodation.findMany();
+    return accomodations;
+  } catch {
+    throw new Error("Failed to fetch data.");
+  }
+};
+
+const Search = async () => {
+  const accomodations = await getData();
   return (
     <main className="h-full w-full flex flex-col items-start container gap-4 p-4 sm:p-0 sm:pt-4">
       <div className="flex flex-row gap-x-8 gap-y-4 items-center justify-between w-full flex-wrap">
@@ -93,38 +104,19 @@ const Search = () => {
         </div>
       </div>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Card
-          src={NYC}
-          name="Hilton Garden Inn New York-Midtown Park Ave"
-          description="A hotel in New York."
-          stars={5}
-          category="Hotel"
-          price="200$"
-        />
-        <Card
-          src={NYC}
-          name="Hilton Garden Inn New York-Midtown Park Ave"
-          description="A hotel in New York."
-          stars={5}
-          category="Hotel"
-          price="200$"
-        />
-        <Card
-          src={NYC}
-          name="Hilton Garden Inn New York-Midtown Park Ave"
-          description="A hotel in New York."
-          stars={5}
-          category="Hotel"
-          price="200$"
-        />
-        <Card
-          src={NYC}
-          name="Hilton Garden Inn New York-Midtown Park Ave"
-          description="A hotel in New York."
-          stars={5}
-          category="Hotel"
-          price="200$"
-        />
+        {accomodations.map(
+          ({ name, rating, description, location, price, type }, key) => (
+            <Card
+              key={key}
+              src={NYC}
+              name={name}
+              description={description}
+              rating={rating ? Math.floor(rating) : 0}
+              type={type}
+              price={price.toString() + "$"}
+            />
+          )
+        )}
       </div>
     </main>
   );
