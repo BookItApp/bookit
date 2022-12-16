@@ -1,0 +1,4 @@
+# Files to ignore:
+public
+node_modules
+.next

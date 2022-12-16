@@ -82,7 +82,9 @@ const Accomodations = () => (
 const Articles = () => (
   <div className="w-full flex flex-col gap-4">
     <div className="flex flex-row items-center justify-between gap-8">
-      <h2 className="text-xl font-bold">Get inspiration for your next adventure!</h2>
+      <h2 className="text-xl font-bold">
+        Get inspiration for your next adventure!
+      </h2>
       <Link
         href="/accomodations"
         className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 to-blue-600 flex items-center flex-row"
@@ -92,7 +94,11 @@ const Articles = () => (
       </Link>
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <LongCard href="/" name="The coziest holiday stays in the USA" image={ChristmasImage} />
+      <LongCard
+        href="/"
+        name="The coziest holiday stays in the USA"
+        image={ChristmasImage}
+      />
       <LongCard href="/" name="48 hours in New York" image={NewYorkImage} />
     </div>
   </div>
@@ -103,7 +109,7 @@ export default function Home() {
     <main className="h-full w-full flex flex-col items-center container gap-8">
       <Banner />
       <div className="p-4 sm:p-0 sm:pb-8 flex flex-col gap-8 items-center">
-        <Destinations/>
+        <Destinations />
         <Accomodations />
         <Articles />
       </div>
