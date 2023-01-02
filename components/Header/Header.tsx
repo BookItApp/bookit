@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const Header = () => (
-  <header className="p-4 w-full">
+  <header className="w-full p-4">
     <div className="container mx-auto flex flex-row justify-between items-center">
       <Link href="/" className="font-extrabold text-3xl select-none">
         Book
@@ -9,7 +9,10 @@ const Header = () => (
           It.
         </span>
       </Link>
-      <div className="font-semibold flex flex-row gap-4">
+      <span className="visible sm:hidden font-icons text-4xl">
+        menu
+      </span>
+      <div className="hidden sm:flex font-semibold flex-row gap-4">
         <Link
           href="/signin"
           className="py-1 px-4 rounded-full hover:bg-gradient-to-br from-emerald-400/20 to-blue-600/20 transition"
