@@ -21,3 +21,9 @@ model Accomodation {
   price       Float
   type        String @db.VarChar(50)
 }
+
+model User {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+}
