@@ -14,7 +14,8 @@ datasource db {
 model Accomodation {
   id          Int    @id @default(autoincrement())
   name        String @db.TinyText
-  rating      Float?
+  photo       String @db.LongText
+  rating      Int
   description String @db.MediumText
   location    String @db.TinyText
   price       Float

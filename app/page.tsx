@@ -19,7 +19,7 @@ const Banner = () => (
       fill
       className="sm:rounded-lg brightness-75 z-0 object-cover"
     />
-    <div className="absolute w-full h-full flex flex-col items-center gap-4 justify-center bg-black/25 sm:rounded-lg z-20 p-4">
+    <div className="absolute w-full h-full flex flex-col items-center gap-4 justify-center bg-black/25 sm:rounded-lg z-20">
       <p className="text-white text-5xl font-bold text-center">
         Reserve the destinations of
         <br />
@@ -108,7 +108,7 @@ export default function Home() {
   return (
     <main className="h-full w-full flex flex-col items-center container gap-8">
       <Banner />
-      <div className="p-4 sm:p-0 sm:pb-8 flex flex-col gap-8 items-center">
+      <div className="flex flex-col gap-8 items-center px-4">
         <Destinations />
         <Accomodations />
         <Articles />

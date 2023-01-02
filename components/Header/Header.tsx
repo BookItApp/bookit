@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const Header = () => (
-  <header className="p-4 w-full">
+  <header className="w-full p-4">
     <div className="container mx-auto flex flex-row justify-between items-center">
       <Link href="/" className="font-extrabold text-3xl select-none">
         Book

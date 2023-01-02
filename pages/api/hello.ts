@@ -6,12 +6,14 @@ import { prisma } from "../../lib/db";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   await prisma.accomodation.create({
     data: {
-      name: "Hilton Garden Inn New York-Midtown Park Ave",
-      rating: 5,
-      description: "A hotel in New York.",
-      location: "New York",
-      price: 200,
-      type: "Apartment",
+      name: "Rosen Inn International",
+      photo: "rosen-inn-orlando.jpg",
+      rating: 2,
+      description:
+        "Affordable Orlando vacation hotel near Universal Orlando Resort™, minutes away from world-famous entertainment",
+      location: "Orlando",
+      price: 64,
+      type: "Hotel",
     },
   });
   const accomodations = await prisma.accomodation.findMany();
