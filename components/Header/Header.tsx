@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cookies } from "next/headers"
 
 const Header = () => {
-  const loggedIn = cookies().has("next-auth.session-token")
+  const loggedIn = cookies().has("next-auth.session-token") || cookies().has("__Secure-next-auth.session-token")
   return (
     <header className="w-full p-4">
       <div className="container mx-auto flex flex-row justify-between items-center">
