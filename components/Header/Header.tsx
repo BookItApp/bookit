@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cookies } from "next/headers"
 
-const Header = async () => {
+const Header = () => {
   const loggedIn = cookies().has("next-auth.session-token")
   return (
     <header className="w-full p-4">
